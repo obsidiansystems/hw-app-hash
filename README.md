@@ -15,14 +15,14 @@ const Provenance = require("hw-app-hash_token").default;
 
 const getPublicKey = async () => {
   const hash_token = new Provenance(await Transport.create());
-  return await hash_token.getPublicKey("44'/535348'/0'/0/0");
+  return await hash_token.getPublicKey("44'/505'/0'/0/0");
 };
 
 const signTransaction = async () => {
   const transport = await Transport.create();
   const hash_token = new Provenance(await Transport.create());
   return await hash_token.signTransaction(
-    "44'/535348'/0'/0/0",
+    "44'/505'/0'/0/0",
     "<transaction contents>"
   );
 };
@@ -83,7 +83,7 @@ Get Provenance address for a given BIP-32 path.
 #### Examples
 
 ```javascript
-const publicKey = await hash_token.getPublicKey("44'/535348'/0'/0/0");
+const publicKey = await hash_token.getPublicKey("44'/505'/0'/0/0");
 ```
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** an object with a public key.
@@ -101,7 +101,7 @@ Sign a transaction with a given BIP-32 path.
 
 ```javascript
 const publicKey = await hash_token.signTransaction(
-  "44'/535348'/0'/0/0",
+  "44'/505'/0'/0/0",
   "<transaction contents>"
   );
 ```
